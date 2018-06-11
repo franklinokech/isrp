@@ -15,7 +15,7 @@ class Model_user extends CI_Model {
 
         );
         //insert data to the database
-        $this->db->insert('users',$data);
+        $this->db->insert('tbl_users',$data);
 
     }
 
@@ -28,7 +28,7 @@ class Model_user extends CI_Model {
         //fetch data from database
         $this->db->where('username',$username);
         $this->db->where('password',$password);
-        $res = $this->db->get('users');
+        $res = $this->db->get('tbl_users');
 
         //check if there's a user with the above inputs
         if ($res->num_rows() == 1) {
