@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ISRP:Login</title>
     <link href="<?php echo base_url('assets/css/bootstrap.min.css') ;?>" rel="stylesheet">
-    <style type="text/css">
-        body{
-            background-color: green;
-        }
-    </style>
+    
 </head>
 <body>
     <div class='container' style='margin-top: 100px;'>
