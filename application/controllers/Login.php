@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 
                 //fetch from databse
                 $this->db->select('*');
-                $this->db->from('users');
+                $this->db->from('tbl_users');
                 $this->db->where(array('username' => $username , 'password' => $password));
                 $query = $this->db->get();
 
