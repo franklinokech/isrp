@@ -33,7 +33,9 @@ Installation
 ************
 
 Please see the `installation section <https://franklinokech.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+of the isrp User Guide.
+username:admin
+password:123
 
 *******
 License
