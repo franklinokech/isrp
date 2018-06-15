@@ -2,7 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
-
+  function __construct() { 
+        parent::__construct(); 
+        //load model 
+        $this -> load -> model('Domains_model');
+      }
+     
     public function profile() {
 
         if ($_SESSION['user_logged'] == FALSE) {
@@ -12,8 +17,8 @@ class User extends CI_Controller {
 
 
         }
-
-        $this->load->view('user_view');
+        $data['domains'] = $this -> Domains_model -> get_domains();
+        $this->load->view('user_view',$data);
 
     }
 }

@@ -48,6 +48,8 @@
                     <li><a href='<?php echo base_url(); ?>index.php/Login/logoutUser'>Logout</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
+
+
         </div><!-- /.container-fluid -->
     </nav>
 <div class='container' style='margin-top: 40px;'>
@@ -68,7 +70,34 @@
     <div class="jumbotron">
         <h2>Hello <?php echo $_SESSION['username'];?></h2>
         <p>Welcome To ICTA Standards and Requirements Dissemination Portal...A One Stop For All government Minimum ICT Requirements and Standards</p>
-        <p><a class="btn btn-primary" href="<?php echo site_url('Login/logoutUser') ?>" role="button">Log out</a></p>
+                <!-- start of the dropdown box -->
+            <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-offset-3 col-lg-6">
+                <label for="domain">Domain</label>
+                <?php echo form_dropdown('domains', $domains, '', 'class="form-control"');?>
+                  <div class="form-group">
+                    <label for="subdomain">Sub Domain</label>
+                    <select class="form-control" name="subdomain" id="subdomain" disabled="">
+                        <option value="">Select Domain</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" name="btnSubmit" id="btnSubmit" value="Search" class="btn-success">
+                    
+                  </div>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+            <!-- start of the dropdown box -->
+        
     </div>
 
 </div>
