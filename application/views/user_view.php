@@ -7,6 +7,7 @@
     <title>ISRP:Home</title>
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/custom.css" rel="stylesheet">
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-static-top">
@@ -77,15 +78,22 @@
         <div class="row">
             <div class="col-md-offset-3 col-lg-6">
                 <label for="domain">Domain</label>
-                <?php echo form_dropdown('domains', $domains, '', 'class="form-control"');?>
+                <?php 
+                $js = array(
+                'id'       => 'domains',
+                'onChange'=>'onChangeDomains(this.value);',
+                'class'=>'form-control'
+);
+                ?>
+                <?php echo form_dropdown('domains', $domains, '',$js);?>
                   <div class="form-group">
                     <label for="subdomain">Sub Domain</label>
                     <select class="form-control" name="subdomain" id="subdomain" disabled="">
-                        <option value="">Select Domain</option>
+                        <option value="">Select Sub Domain</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="submit" name="btnSubmit" id="btnSubmit" value="Search" class="btn-success">
+                    <input type="submit" name="btnSubmit" id="btnSubmit" value="Search" class="btn-success" disabled>
                     
                   </div>
 
@@ -105,5 +113,42 @@
 
     <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+    <script>
+        function onChangeDomains(domain_id)
+        {
+                //alert("The value is "+domain_id);
+                /*check if the user has not selected any domain and disables the subdomain, otherwise enable it*/
+                $(document).ready(function()
+                    {
+                        if (domain_id=="") 
+                {
+                    $('#subdomain').prop('disabled',true);
+                    $("#btnSubmit").prop("disabled", true);
+                }
+                else
+                {
+                    $('#subdomain').prop('disabled',false);
+                    $("#btnSubmit").prop("disabled", false);
+                    $.ajax(
+                    {
+                        url:"<?php echo base_url()?>User/get_sub_domains",
+                        type:"POST",
+                        data:{"domain_id":domain_id},
+                        dataType:'json',
+                        success:function(data)
+                        {
+                            $('#subdomain').html(data);
+                        },
+                        error:function()
+                        {
+                            alert('failed');
+                        }
+                    });
+                }
+                    });
+                
+        }
+        
+</script>
   </body>
 </html>

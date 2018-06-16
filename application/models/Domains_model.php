@@ -15,4 +15,12 @@ class Domains_model extends CI_Model {
         
         return $domains; 
     } 
+    /*
+    This query gets the subdomains from database based on the domain selected
+     */
+    public function get_subdomain_query($domain_id)
+    {
+        $query=$this->db->get_where('tbl_sub_domain',array('domain_id'=>$domain_id));
+        return $query->result();
+    }
 }
