@@ -419,7 +419,7 @@ CREATE TABLE `tbl_users` (
 
 LOCK TABLES `tbl_users` WRITE;
 /*!40000 ALTER TABLE `tbl_users` DISABLE KEYS */;
-INSERT INTO `tbl_users` VALUES ('admin','admin admin','admin@gmail.com','0777123456','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('denis@gmail.com','denis agutu abong\'o','denisagutu@gmail.com','+254700520718','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('felistus','felistus muindi','felistus2@GMAIL.COM','0700123095','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('flavian','Fravian Bwibo','flavianbwibo@gmail.com','0712512745','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('fr','dd','dd@gmail.com','ss','7b52009b64fd0a2a49e6d8a939753077792b0554'),('franklin','Franklin','franklinokech@gmail.com','0700520718','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('franklin2','Franklin','franklinokech@gmail.com','0700520718','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('james@wafula','wafula','wafula@gmail.com','123','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('tony@yahoo.com','tony ombogo','tonu@gmail.com','0712512764','40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+INSERT INTO `tbl_users` VALUES ('admin','admin admin','admin@gmail.com','0777123456','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('denis@gmail.com','denis agutu abong\'o','denisagutu@gmail.com','+254700520718','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('felistus','felistus muindi','felistus2@GMAIL.COM','0700123095','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('flavian','Fravian Bwibo','flavianbwibo@gmail.com','0712512745','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('fr','dd','dd@gmail.com','ss','7b52009b64fd0a2a49e6d8a939753077792b0554'),('franklin','Franklin','franklinokech@gmail.com','0700520718','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('franklin2','Franklin','franklinokech@gmail.com','0700520718','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('james@wafula','wafula','wafula@gmail.com','123','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('jarodi','Jarodi kopany','jarodi@gmail.com','0700520718','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),('tony@yahoo.com','tony ombogo','tonu@gmail.com','0712512764','40bd001563085fc35165329ea1ff5c5ecbdbbeef');
 /*!40000 ALTER TABLE `tbl_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -432,4 +432,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-17 12:48:37
+-- Dump completed on 2018-06-17 16:05:01
