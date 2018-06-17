@@ -19,6 +19,7 @@ class User extends CI_Controller {
         }
         $data['domains'] = $this->Domains_model->get_domains();
         $this->load->view('user_view',$data);
+        $this->load->view('footer_view');
 
     }
     /*
@@ -37,11 +38,17 @@ class User extends CI_Controller {
       {
         $sub_dropdown='';
         $sub_dropdown.='<option value="">Please Select Sub-Domains</option>';
+
+        /*
+        Loop through all the subdomains found and in each store its id as value and name as the name
+         */
         foreach ($sub_domain as $subdomain) {
-          $sub_dropdown.='<option value="'.$subdomain->domain_id.'">'.$subdomain->name.'</option>';
+          $sub_dropdown.='<option value="'.$subdomain->id.'">'.$subdomain->name.'</option>';
         }
         echo json_encode($sub_dropdown);
       }
+
       }
+
     }
 

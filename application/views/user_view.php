@@ -77,6 +77,7 @@
 
         <div class="row">
             <div class="col-md-offset-3 col-lg-6">
+                <?php echo form_open("Minimum_req/get_minimum_req");?>
                 <label for="domain">Domain</label>
                 <?php 
                 $js = array(
@@ -89,14 +90,14 @@
                   <div class="form-group">
                     <label for="subdomain">Sub Domain</label>
                     <select class="form-control" name="subdomain" id="subdomain" disabled="">
-                        <option value="">Select Sub Domain</option>
+                        <!-- <option value="">Select Sub Domain</option>-->
                     </select>
                   </div>
                   <div class="form-group">
                     <input type="submit" name="btnSubmit" id="btnSubmit" value="Search" class="btn-success" disabled>
                     
                   </div>
-
+        <?php echo form_close();?>
             </div>
         </div>
         <!-- /.row -->
@@ -120,6 +121,7 @@
                 /*check if the user has not selected any domain and disables the subdomain, otherwise enable it*/
                 $(document).ready(function()
                     {
+                        
                         if (domain_id=="") 
                 {
                     $('#subdomain').prop('disabled',true);
