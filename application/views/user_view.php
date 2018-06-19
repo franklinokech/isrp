@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home | SRD</title>
+    <title>ISRP:Home</title>
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/custom.css" rel="stylesheet">
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-static-top">
@@ -48,6 +49,8 @@
                     <li><a href='<?php echo base_url(); ?>index.php/Login/logoutUser'>Logout</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
+
+
         </div><!-- /.container-fluid -->
     </nav>
 <div class='container' style='margin-top: 40px;'>
@@ -68,7 +71,42 @@
     <div class="jumbotron">
         <h2>Hello <?php echo $_SESSION['username'];?></h2>
         <p>Welcome To ICTA Standards and Requirements Dissemination Portal...A One Stop For All government Minimum ICT Requirements and Standards</p>
-        <p><a class="btn btn-primary" href="<?php echo site_url('Login/logoutUser') ?>" role="button">Log out</a></p>
+                <!-- start of the dropdown box -->
+            <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-offset-3 col-lg-6">
+                <?php echo form_open("Minimum_req/get_minimum_req");?>
+                <label for="domain">Domain</label>
+                <?php 
+                $js = array(
+                'id'       => 'domains',
+                'onChange'=>'onChangeDomains(this.value);',
+                'class'=>'form-control'
+);
+                ?>
+                <?php echo form_dropdown('domains', $domains, '',$js);?>
+                  <div class="form-group">
+                    <label for="subdomain">Sub Domain</label>
+                    <select class="form-control" name="subdomain" id="subdomain" disabled="">
+                        <!-- <option value="">Select Sub Domain</option>-->
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" name="btnSubmit" id="btnSubmit" value="Search" class="btn-success" disabled>
+                    
+                  </div>
+        <?php echo form_close();?>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+            <!-- start of the dropdown box -->
+        
     </div>
 
 </div>
@@ -76,5 +114,43 @@
 
     <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+    <script>
+        function onChangeDomains(domain_id)
+        {
+                //alert("The value is "+domain_id);
+                /*check if the user has not selected any domain and disables the subdomain, otherwise enable it*/
+                $(document).ready(function()
+                    {
+                        
+                        if (domain_id=="") 
+                {
+                    $('#subdomain').prop('disabled',true);
+                    $("#btnSubmit").prop("disabled", true);
+                }
+                else
+                {
+                    $('#subdomain').prop('disabled',false);
+                    $("#btnSubmit").prop("disabled", false);
+                    $.ajax(
+                    {
+                        url:"<?php echo base_url()?>User/get_sub_domains",
+                        type:"POST",
+                        data:{"domain_id":domain_id},
+                        dataType:'json',
+                        success:function(data)
+                        {
+                            $('#subdomain').html(data);
+                        },
+                        error:function()
+                        {
+                            alert('failed');
+                        }
+                    });
+                }
+                    });
+                
+        }
+        
+</script>
   </body>
 </html>

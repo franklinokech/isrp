@@ -6,7 +6,7 @@ class Register extends CI_Controller {
     public function registerUser() {
 
         //validate  the data taken through the register form
-        $this->form_validation->set_rules('username','Username','required|is_unique[users.username]');
+        $this->form_validation->set_rules('username','Username','required|is_unique[tbl_users.username]');
         $this->form_validation->set_rules('fname','Full Name','required');
         $this->form_validation->set_rules('email','Email','required|valid_email');
         $this->form_validation->set_rules('mobile','Mobile Number','required');

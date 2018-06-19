@@ -11,10 +11,11 @@ class Login extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
 
             $this->load->view('login_view');
-
+            
         } else {
 
             $this->load->model('Model_user');
+
             $reslt = $this->Model_user->checkLogin();
 
             if ($reslt != false) {
@@ -25,7 +26,7 @@ class Login extends CI_Controller {
 
                 //fetch from databse
                 $this->db->select('*');
-                $this->db->from('users');
+                $this->db->from('tbl_users');
                 $this->db->where(array('username' => $username , 'password' => $password));
                 $query = $this->db->get();
 

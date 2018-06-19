@@ -57,13 +57,13 @@ or via our `page on HackerOne <https://hackerone.com/franklinokech>`_, thank you
 ***************
 Developer
 ***************
-franklin ochieng okech
-Flavian Bwibo
+franklin ochieng okech,
+Flavian Bwibo,
 Eva Mukami Njeru
 
 ***************
 Acknowledgement
 ***************
 
-The ictA team would like to thank all the
-contributors to the iprs project and you
+The ICTA standards team would like to thank all the
+contributors to the iprs project
