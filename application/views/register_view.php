@@ -16,6 +16,7 @@
                 <div class='panel panel-default'>
                     <div class='panel-body'>
                         <!-- validation message for a successful registration -->
+                        <img src="<?php echo base_url('assets/img/logo.jpeg');?>">
                         <?php if ($this->session->flashdata('success')) {?>
                             <div class="alert alert-success alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -32,7 +33,7 @@
                         ?>
 
                         <?php echo form_open('Register/registerUser') ?>
-
+                        <legend><h2>Standards Portal </h2></legend>
                             <div class="form-group">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
@@ -58,7 +59,7 @@
                                 <label for="password">Confirm Password</label>
                                 <input type="password" class="form-control" name="cpassword" id="password" placeholder="Password">
                             </div>
-                            <button class="btn btn-primary" name='reg'>REGISTER</button>
+                            <button class="btn btn-success" name='reg'>REGISTER</button>
                             <a href="<?php echo site_url('Home/Login') ?>" class="btn btn-link">Sign In</a>
 
                         <?php echo form_close() ?>

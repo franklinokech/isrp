@@ -11,10 +11,11 @@ class Login extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
 
             $this->load->view('login_view');
-
+            
         } else {
 
             $this->load->model('Model_user');
+
             $reslt = $this->Model_user->checkLogin();
 
             if ($reslt != false) {

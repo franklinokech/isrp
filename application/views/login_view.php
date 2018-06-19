@@ -16,8 +16,9 @@
             <div class='col-md-4'>
                 <div class='panel panel-default'>
                     <div class='panel-body'>
-                        <img src="<?php echo base_url('assets/img/logo.jpeg');?>"
+                        <img src="<?php echo base_url('assets/img/logo.jpeg');?>">
                         <!-- validation message for a successful login -->
+
                         <?php if ($this->session->flashdata('error')) {?>
                             <div class="alert alert-danger alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -33,7 +34,7 @@
                         ?>
 
                         <?php echo form_open('Login/loginUser') ?>
-                       
+                        <legend><h2>Standards Portal </h2></legend>
                             <div class="form-group">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
@@ -42,11 +43,11 @@
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-primary">LOGIN</button>
+                            <button type="submit" class="btn btn-success">LOGIN</button>
                             <a href="<?php echo site_url('Home/Register') ?>" class="btn btn-link">Sign Up</a>
 
                         <?php echo form_close() ?>
-
+                        
                     </div>
                 </div>
             </div>
