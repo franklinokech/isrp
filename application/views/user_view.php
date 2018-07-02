@@ -7,6 +7,7 @@
     <title>ISRP:Home</title>
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/custom.css" rel="stylesheet">
+    <link rel="icon" href="http://icta.go.ke/powerassets/uploads/2016/10/cropped-fav-32x32.png" sizes="32x32" />
 
 </head>
 <body>

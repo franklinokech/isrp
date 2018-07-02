@@ -1,4 +1,9 @@
-<style type="text/css">
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="icon" href="http://icta.go.ke/powerassets/uploads/2016/10/cropped-fav-32x32.png" sizes="32x32" />
+  <style type="text/css">
         .row{
         margin-top:40px;
         padding: 0 10px;
@@ -17,7 +22,11 @@
     .panel-body{
       display: none;
     }
+
 </style>
+
+</head>
+<body>
 <div class='container' style='margin-top: 40px;'>
   <div class="col-md-6">
         <div class="panel panel-success">
@@ -53,6 +62,10 @@
 </div>
 </div>
 </div>
+
 <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+</body>
+</html>
+
 

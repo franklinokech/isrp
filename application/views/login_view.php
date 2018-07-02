@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ISRP:Login</title>
     <link href="<?php echo base_url('assets/css/bootstrap.min.css') ;?>" rel="stylesheet">
+    <link rel="icon" href="http://icta.go.ke/powerassets/uploads/2016/10/cropped-fav-32x32.png" sizes="32x32" />
     
 </head>
 <body>
